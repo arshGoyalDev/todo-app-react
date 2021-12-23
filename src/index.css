@@ -41,6 +41,10 @@ code {
     monospace;
 }
 
+/* ---------------- */
+/* focus            */
+/* ---------------- */
+
 *:focus{
-  outline: 2px solid snow;
+  outline: 2px solid #fffbfb;
 }
