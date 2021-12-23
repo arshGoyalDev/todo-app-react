@@ -1,42 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import './components/styles/App.css';
-import styled, { ThemeProvider } from 'styled-components';
+
+import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme, GlobalStyles } from './Theme';
+
 import Header from './components/Header';
 import TodoInput from './components/TodoInput';
 import TodoContainer from './components/TodoContainer';
-
-
-const Styled = styled.div`
-`
 
 
 function App() {
 
   let savedTheme = localStorage.getItem('theme');
   const [theme, setTheme] = useState(savedTheme);
-  const todoItems = [
-    {
-      id: 1,
-      task: 'Read a book',
-    },
-    {
-      id: 2,
-      task: 'Do the homework',
-    },
-    {
-      id: 3,
-      task: 'Watch Hawkeye Finale',
-    },
-    {
-      id: 4,
-      task: 'Complete react tutorial',
-    },
-    {
-      id: 5,
-      task: 'Jog for 10 minutes',
-    },
-  ]
+  const todoItems = []
+  const [tasks, setTasks] = useState(todoItems);
   
   useEffect(() => {
     localStorage.setItem('theme', theme);
@@ -47,21 +25,29 @@ function App() {
     theme === 'dark' ? setTheme('light') : setTheme('dark');
   }
 
+  const addTask = taskData => {
+    let data = [...tasks, taskData]
+    setTasks(data);
+  } 
+  
+  const deleteTodo = taskId => { setTasks([...tasks].filter(todo => todo.id !== taskId)) };
+
 
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
 
     <GlobalStyles />
-    <Styled className="app">
+    <div className="App">
 
       <Header themeToggler={ themeToggler } theme={ theme } />
-      <TodoInput />
-      <TodoContainer todoData={ todoItems } />
+      <TodoInput addTask={ addTask } />
+      <TodoContainer todoData={ tasks } deleteTodo={ deleteTodo } />
 
-    </Styled>
+    </div>
 
     </ThemeProvider>
   );
 }
+
 
 export default App;

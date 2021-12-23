@@ -75,3 +75,21 @@
 .todo-checkbox:checked ~ .todo-task{
   text-decoration: line-through;
 }
+
+.remove-task-btn{
+  margin: 0 0 -6px auto;
+}
+
+@media (min-width: 78em) {
+  .remove-task-btn{
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .todo:hover .remove-task-btn{
+    opacity: 1;
+    visibility: visible;
+  }
+}
