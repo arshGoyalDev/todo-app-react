@@ -1,13 +1,24 @@
-.container{
+.app{
   min-height: 100vh;
-  background-image: url(assets/images/bg-desktop-dark.jpg);
-  background-size: 100% 300px;
+  background-image: url(assets/images/bg-mobile-dark.jpg);
+  background-size: 100% 240px;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-[data-theme="light"] .container{
-  background-image: url(assets/images/bg-desktop-light.jpg);
+[data-theme="light"] .app{
+  background-image: url(assets/images/bg-mobile-light.jpg);
+}
+
+
+@media (min-width: 38em) {
+  .app{
+    background-size: 100% 300px;
+    background-image: url(assets/images/bg-desktop-dark.jpg);
+  }
+  [data-theme="light"] .app{
+    background-image: url(assets/images/bg-desktop-light.jpg);
+  }
 }

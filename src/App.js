@@ -27,7 +27,7 @@ function App() {
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
 
     <GlobalStyles />
-    <Styled className="container">
+    <Styled className="app">
 
       <Header themeToggler={ themeToggler } theme={ theme } />
       <TodoInput />
