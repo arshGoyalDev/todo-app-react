@@ -1,0 +1,24 @@
+
+.todo-input{
+  display: flex;
+  align-items: center;
+  width: 500px;
+  border-radius: 5px; 
+  padding-left: 15px;
+}
+
+.add-btn{
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.todo-input input{
+  width: 100%;
+  padding: 20px 20px 17px;
+  background: transparent;
+  border: none;
+  outline: none;
+}

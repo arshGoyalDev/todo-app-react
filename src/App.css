@@ -7,3 +7,7 @@
   align-items: center;
   flex-direction: column;
 }
+
+[data-theme="light"] .container{
+  background-image: url(assets/images/bg-desktop-light.jpg);
+}
