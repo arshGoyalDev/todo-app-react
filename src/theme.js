@@ -12,8 +12,8 @@ export const darkTheme = {
 }
 
 export const lightTheme = {
-  bodyBackground: 'hsl(0, 0%, 98%)',
-  todoBackground: 'hsl(236, 33%, 92%)',
+  bodyBackground: 'hsl(236, 33%, 92%)',
+  todoBackground: 'hsl(0, 0%, 98%)',
   text: 'hsl(235, 21%, 11%)',
   lightGrayishBlue: 'hsl(233, 11%, 84%)',
   darkGrayishBlue: 'hsl(236, 9%, 61%)',
@@ -24,23 +24,30 @@ export const lightTheme = {
 export const GlobalStyles = createGlobalStyle`
 
 	body {
-		background-color: ${(props) => props.theme.bodyBackground};
+		background-color: ${props => props.theme.bodyBackground};
 	}
 
   .todo-input{
-    background: ${(props) => props.theme.todoBackground};
+    background: ${props => props.theme.todoBackground};
   }
   
-  .add-btn{
-    border: 1px solid ${(props) => props.theme.darkGrayishBlue};
+  .add-btn,
+  .todo-checkbox{
+    border: 1px solid ${props => props.theme.darkGrayishBlue};
   }
   
   .todo-input input{
-    color: ${(props) => props.theme.text}
+    color: ${props => props.theme.text}
   }
   
-  .todo-input input::placeholder{
-    color: ${(props) => props.theme.darkGrayishBlue}
+  .todo-input input::placeholder,
+  .todo-checkbox:checked ~ .todo-task{
+    color: ${props => props.theme.darkGrayishBlue}
   }
 
-  `;
+  .todo{
+    background: ${props => props.theme.todoBackground};
+    color: ${props => props.theme.text};
+  }
+
+`;

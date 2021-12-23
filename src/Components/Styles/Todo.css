@@ -1,0 +1,77 @@
+.todo-container{
+  width: 90%;
+  margin-top: 20px;
+}
+
+@media (min-width: 38em) {
+  .todo-container{
+    width: 500px;
+  }
+}
+
+.todo{
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+}
+
+.todo:first-child{
+  border-radius: 5px 5px 0 0;
+}
+
+.todo:last-child{
+  border-radius: 0 0 5px 5px;
+}
+
+.todo-checkbox{
+  position: relative;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  margin-right: 18px;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: default;
+}
+
+.todo-checkbox::before{
+  content: '';
+  position: absolute;
+  width: 100%; height: 100%;
+  background-image: url(../../assets/images/icon-check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.todo-checkbox:checked{
+  width: 26px; height: 26px;
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));  
+  border: 0;
+}
+
+.todo-checkbox:checked::before{
+  opacity: 1;
+  visibility: visible;
+}
+
+.todo-task{
+  width: 200px;
+  margin-bottom: -5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@media (min-width: 38em) {
+  .todo-task{
+    width: 350px;
+  }
+}
+
+.todo-checkbox:checked ~ .todo-task{
+  text-decoration: line-through;
+}

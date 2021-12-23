@@ -1,4 +1,4 @@
-import './Styles/TodoInput.css';
+import './styles/TodoInput.css';
 
 
 let TodoInput = () => {
