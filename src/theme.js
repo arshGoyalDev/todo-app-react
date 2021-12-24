@@ -27,7 +27,6 @@ export const lightTheme = {
   // veryDarkGrayishBlue: 'hsl(235, 19%, 35%)',
 }
 
-
 export const GlobalStyles = createGlobalStyle`
 
 	body {

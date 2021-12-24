@@ -12,8 +12,9 @@ import TodoContainer from './components/TodoContainer';
 function App() {
 
   let savedTheme = localStorage.getItem('theme');
-  const [theme, setTheme] = useState(savedTheme);
   let savedTodo = localStorage.getItem('tasks') != null ? JSON.parse(localStorage.getItem('tasks')) : [];
+
+  const [theme, setTheme] = useState(savedTheme);
   const [tasks, setTasks] = useState(savedTodo);
 
   useEffect(() => {
@@ -37,14 +38,12 @@ function App() {
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
 
-    <GlobalStyles />
-    <div className="App">
-
-      <Header themeToggler={ themeToggler } theme={ theme } />
-      <TodoInput addTask={ addTask } />
-      <TodoContainer todoData={ tasks } deleteTodo={ deleteTodo } />
-
-    </div>
+      <GlobalStyles />
+      <div className="App">
+        <Header themeToggler={ themeToggler } theme={ theme } />
+        <TodoInput addTask={ addTask } />
+        <TodoContainer todoData={ tasks } deleteTodo={ deleteTodo } />
+      </div>
 
     </ThemeProvider>
   );
