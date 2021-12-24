@@ -7,6 +7,7 @@ import { ReactComponent as MoonIcon } from '../assets/images/icon-moon.svg';
 
 let Header = props => {
 
+  // theme toggle
   let clickHandler = (e) => {
     props.themeToggler();
   }

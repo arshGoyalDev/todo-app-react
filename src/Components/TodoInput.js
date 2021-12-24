@@ -4,31 +4,33 @@ import './styles/TodoInput.css';
 
 let TodoInput = props => {
 
+  // useState
   let [task, setTask] = useState('');
-  let id = 1;
-  let [Id, setID] = useState(id);
 
+  // changing the value of TaskInput
   let changeHandler = e => {
     setTask(e.target.value);
   }
 
+  // add todo
   let addTodo = () => {
     if (task == '') return;
     let taskData = { 
-      id: Id,
+      id: Math.floor(Math.random() * 1000) + 1,
       task: task, 
       taskCompleted: false,
     }
   
-    setID(Id += 1);
     props.addTask(taskData);
     setTask('');
   }
 
+  // on clicking enter key
   let keyDownHandler = e => {
     if (e.keyCode == 13) addTodo();
   }
 
+  // add btn
   let clickHandler = () => addTodo();
 
 

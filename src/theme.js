@@ -8,6 +8,7 @@ export const darkTheme = {
   todoBorder: 'hsl(237, 14%, 26%)',
   checkboxBorder: 'hsl(234, 11%, 52%)',
   placeholderAndCompletedTask: 'hsl(234, 11%, 52%)',
+  clearCompletedBtnHover: 'hsl(234, 39%, 85%)',
   
   // darkGrayishBlue: 'hsl(234, 11%, 52%)',
   // lightGrayishBlueHover: 'hsl(236, 33%, 92%)',
@@ -21,6 +22,7 @@ export const lightTheme = {
   todoBorder: 'hsl(233, 11%, 84%)',
   checkboxBorder: 'hsl(236, 9%, 61%)',
   placeholderAndCompletedTask: 'hsl(236, 9%, 61%)',
+  clearCompletedBtnHover: 'hsl(235, 19%, 35%)',
   
   // darkGrayishBlue: 'hsl(236, 9%, 61%)',
   // lightGrayishBlue: 'hsl(233, 11%, 84%)',
@@ -33,7 +35,8 @@ export const GlobalStyles = createGlobalStyle`
 		background-color: ${props => props.theme.bodyBackground};
 	}
 
-  .todo-input{
+  .todo-input,
+  .task-left--clear-btn{
     background: ${props => props.theme.todoBackground};
   }
   
@@ -47,7 +50,9 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   .todo-input input::placeholder,
-  .todo-checkbox.completed ~ .todo-task{
+  .todo-checkbox.completed ~ .todo-task,
+  .items-left,
+  .clear-completed-btn{
     color: ${props => props.theme.placeholderAndCompletedTask}
   }
 
@@ -55,6 +60,11 @@ export const GlobalStyles = createGlobalStyle`
     background: ${props => props.theme.todoBackground};
     color: ${props => props.theme.text};
     border-bottom: 2px solid ${props => props.theme.todoBorder};
+  }
+
+  .clear-completed-btn:hover,
+  .clear-completed-btn:focus{
+    color: ${(props) => props.theme.clearCompletedBtnHover};
   }
 
 `;

@@ -7,32 +7,58 @@ import { darkTheme, lightTheme, GlobalStyles } from './Theme';
 import Header from './components/Header';
 import TodoInput from './components/TodoInput';
 import TodoContainer from './components/TodoContainer';
+import { TaskLeft, ClearCompleted } from './components/TaskLeftClearBtn';
 
 
 function App() {
 
+  // get todo and theme from local storage
   let savedTheme = localStorage.getItem('theme');
-  let savedTodo = localStorage.getItem('tasks') != null ? JSON.parse(localStorage.getItem('tasks')) : [];
+  let savedTasks = localStorage.getItem('tasks') != null ? JSON.parse(localStorage.getItem('tasks')) : [];
 
+  // use state
   const [theme, setTheme] = useState(savedTheme);
-  const [tasks, setTasks] = useState(savedTodo);
+  const [tasks, setTasks] = useState(savedTasks);
 
+  // use effect
   useEffect(() => {
     document.body.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [theme, tasks])
 
+  // toggle theme
   const themeToggler = () => {
     theme === 'dark' ? setTheme('light') : setTheme('dark');
   }
 
+  // add todo
   const addTask = taskData => {
     let data = [...tasks, taskData]
     setTasks(data);
-  } 
+  }
+  
+  // mark task completed
+  const checkItem = (id) => {
+    const updatedTasks = [...tasks];
+    const task = updatedTasks.find(data => data.id == id);
+    task.taskCompleted = task ? !task.taskCompleted : task.taskCompleted;
+    setTasks(updatedTasks);
+  }
 
+  // delete todo
   const deleteTodo = taskId => { setTasks([...tasks].filter(todo => todo.id !== taskId)) };
+
+  // delete completed todo
+  const clearCompletedTasks = () => {
+    let completedTasks = tasks.filter(item => item.taskCompleted == true);
+    let unCompletedTasks = tasks.filter(item => item.taskCompleted == false);
+
+    if (completedTasks.length == 0) return;
+    if (window.confirm(`Are you sure you want to delete ${completedTasks.length} tasks? `)) {
+      setTasks(unCompletedTasks);
+    }
+  }    
 
 
   return (
@@ -42,7 +68,13 @@ function App() {
       <div className="App">
         <Header themeToggler={ themeToggler } theme={ theme } />
         <TodoInput addTask={ addTask } />
-        <TodoContainer todoData={ tasks } deleteTodo={ deleteTodo } />
+        <div className='container'>
+          <TodoContainer todoData={ tasks } deleteTodo={ deleteTodo } updateItem={ checkItem } />
+          <div className='task-left--clear-btn for mobile'>
+            <TaskLeft items={ tasks } />
+            <ClearCompleted clearCompletedTasks={ clearCompletedTasks } />
+          </div>
+        </div>
       </div>
 
     </ThemeProvider>

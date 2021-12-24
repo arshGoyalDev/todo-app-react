@@ -18,7 +18,8 @@ a{
   font-weight: 400;
 }
 
-input{
+input,
+button{
   font-size: inherit;
   font-family: inherit;
 }

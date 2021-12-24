@@ -1,32 +1,25 @@
 .todo-container{
-  width: 90%; max-height: 333px;
+  max-height: 300px;
   overflow: auto;
-  margin-top: 20px;
   border-radius: 5px 5px 0 0;
-  box-shadow: 5px 5px 60px rgba(0, 0, 0, 0.4);
-  scrollbar-width: none;
+  scrollbar-width: thin;
 }
 
 .todo-container::-webkit-scrollbar{
-  width: 0;
-}
-
-@media (min-width: 38em) {
-  .todo-container{
-    width: 500px;
-  }
+  width: 5px;
 }
 
 .todo{
   display: flex;
   align-items: center;
-  padding: 20px 20px;
+  padding: 16.5px 20px;
 }
 
 .todo-checkbox{
   position: relative;
   width: 25px;
   height: 25px;
+  background: transparent;
   margin-right: 18px;
   border-radius: 50%;
   transition: 0.3s;
@@ -36,6 +29,7 @@
 .todo-checkbox.completed::before{
   content: '';
   position: absolute;
+  top: 0; left: 0.5px;
   width: 100%; height: 100%;
   background-image: url(../../assets/images/icon-check.svg);
   background-repeat: no-repeat;
@@ -68,19 +62,21 @@
 }
 
 .remove-task-btn{
-  margin: 0 0 -6px auto;
+  background: none;
+  border: none;
+  margin: 0 0 -4px auto;
+  outline: none;
 }
 
 @media (min-width: 78em) {
   .remove-task-btn{
     opacity: 0;
-    visibility: hidden;
     transition: 0.3s;
     cursor: pointer;
   }
 
-  .todo:hover .remove-task-btn{
+  .todo:hover .remove-task-btn,
+  .remove-task-btn:focus{
     opacity: 1;
-    visibility: visible;
   }
 }
