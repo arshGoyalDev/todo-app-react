@@ -48,7 +48,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   .todo-input input::placeholder,
-  .todo-checkbox:checked ~ .todo-task{
+  .todo-checkbox.completed ~ .todo-task{
     color: ${props => props.theme.placeholderAndCompletedTask}
   }
 

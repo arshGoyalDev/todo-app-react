@@ -8,9 +8,10 @@ let TodoContainer = props => {
       {
         props.todoData.map(data => (
           <Todo 
-          todoData={data.task} 
           key={ data.id }
           id={ data.id }
+          todoData={ data.task } 
+          taskCompleted={ data.taskCompleted } 
           deleteTodo={ props.deleteTodo }
           />
         ))
