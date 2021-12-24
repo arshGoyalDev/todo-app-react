@@ -82,7 +82,7 @@ function App() {
         <div className='for-mobile'>
           <Filters />
         </div>
-        <p className='drag&drop-line'>Drag and drop to reorder list</p>
+        <p className='drag-drop-line'>Drag and drop to reorder list</p>
       </div>
 
     </ThemeProvider>

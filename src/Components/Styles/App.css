@@ -43,3 +43,9 @@
     width: 550px;
   }
 }
+
+.drag-drop-line{
+  position: absolute;
+  bottom: 30px;
+  font-weight: 600;
+}

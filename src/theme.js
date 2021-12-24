@@ -56,7 +56,8 @@ export const GlobalStyles = createGlobalStyle`
   .todo-checkbox.completed ~ .todo-task,
   .items-left,
   .clear-completed-btn,
-  .filters button{
+  .filters button,
+  .drag-drop-line{
     color: ${(props) => props.theme.placeholderAndCompletedTask}
   }
 
