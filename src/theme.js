@@ -9,10 +9,11 @@ export const darkTheme = {
   checkboxBorder: 'hsl(234, 11%, 52%)',
   placeholderAndCompletedTask: 'hsl(234, 11%, 52%)',
   clearCompletedBtnHover: 'hsl(234, 39%, 85%)',
+  filtersBtnHover: 'hsl(236, 33%, 92%)',
   
-  // darkGrayishBlue: 'hsl(234, 11%, 52%)',
-  // lightGrayishBlueHover: 'hsl(236, 33%, 92%)',
-  // veryDarkGrayishBlueOne: 'hsl(233, 14%, 35%)',
+  // hsl(234, 11%, 52%),
+  // hsl(236, 33%, 92%),
+  // hsl(233, 14%, 35%)'
 }
 
 export const lightTheme = {
@@ -23,48 +24,56 @@ export const lightTheme = {
   checkboxBorder: 'hsl(236, 9%, 61%)',
   placeholderAndCompletedTask: 'hsl(236, 9%, 61%)',
   clearCompletedBtnHover: 'hsl(235, 19%, 35%)',
+  filtersBtnHover: 'hsl(235, 21%, 11%)',
   
-  // darkGrayishBlue: 'hsl(236, 9%, 61%)',
-  // lightGrayishBlue: 'hsl(233, 11%, 84%)',
-  // veryDarkGrayishBlue: 'hsl(235, 19%, 35%)',
+  // 'hsl(236, 9%, 61%)',
+  // 'hsl(233, 11%, 84%)',
+  // 'hsl(235, 19%, 35%)',
 }
 
 export const GlobalStyles = createGlobalStyle`
 
 	body {
-		background-color: ${props => props.theme.bodyBackground};
+		background-color: ${(props) => props.theme.bodyBackground};
 	}
 
   .todo-input,
-  .task-left--clear-btn{
-    background: ${props => props.theme.todoBackground};
+  .items-filters-clear-container,
+  .for-mobile .filters{
+    background: ${(props) => props.theme.todoBackground};
   }
   
   .add-btn,
   .todo-checkbox{
-    border: 1px solid ${props => props.theme.checkboxBorder};
+    border: 1px solid ${(props) => props.theme.checkboxBorder};
   }
   
   .todo-input input{
-    color: ${props => props.theme.text}
+    color: ${(props) => props.theme.text}
   }
   
   .todo-input input::placeholder,
   .todo-checkbox.completed ~ .todo-task,
   .items-left,
-  .clear-completed-btn{
-    color: ${props => props.theme.placeholderAndCompletedTask}
+  .clear-completed-btn,
+  .filters button{
+    color: ${(props) => props.theme.placeholderAndCompletedTask}
   }
 
   .todo{
-    background: ${props => props.theme.todoBackground};
-    color: ${props => props.theme.text};
-    border-bottom: 2px solid ${props => props.theme.todoBorder};
+    background: ${(props) => props.theme.todoBackground};
+    color: ${(props) => props.theme.text};
+    border-bottom: 2px solid ${(props) => props.theme.todoBorder};
   }
 
   .clear-completed-btn:hover,
   .clear-completed-btn:focus{
     color: ${(props) => props.theme.clearCompletedBtnHover};
+  }
+
+  .filters button:focus,
+  .filters button:hover{
+    color: ${(props) => props.theme.filtersBtnHover};
   }
 
 `;

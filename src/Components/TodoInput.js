@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/TodoInput.css';
 
 
-let TodoInput = props => {
+let TodoInput = (props) => {
+  
+  // localStorage
+  let savedValue = localStorage.getItem('taskInputValue') != null ? localStorage.getItem('taskInputValue') : '';
 
   // useState
-  let [task, setTask] = useState('');
+  let [task, setTask] = useState(savedValue);
+
+  useEffect(() => {
+    localStorage.setItem('taskInputValue', task);
+  }, [task])
 
   // changing the value of TaskInput
   let changeHandler = e => {

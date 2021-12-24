@@ -15,7 +15,7 @@
 
 @media (min-width: 38em) {
   .App{
-    background-size: 100% 290px;
+    background-size: 100% 280px;
     background-image: url(../../assets/images/bg-desktop-dark.jpg);
   }
   [data-theme="light"] .App{
@@ -26,19 +26,20 @@
 .container{
   width: 90%;
   margin-top: 20px;
+  border-radius: 5px;
+  overflow: hidden;
   box-shadow: 5px 5px 60px rgba(0, 0, 0, 0.4);
 }
 
-.task-left--clear-btn{
+.items-filters-clear-container{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 18px 20px 16px;
-  border-radius: 0 0 5px 5px;  
 }
 
 @media (min-width: 38em) {
   .container{
-    width: 500px;
+    width: 550px;
   }
 }

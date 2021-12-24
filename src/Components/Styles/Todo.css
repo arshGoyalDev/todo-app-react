@@ -1,8 +1,13 @@
 .todo-container{
-  max-height: 300px;
+  max-height: 240px;
   overflow: auto;
-  border-radius: 5px 5px 0 0;
   scrollbar-width: thin;
+}
+
+@media (min-width: 38em) {
+  .todo-container{
+    max-height: 300px;
+  }
 }
 
 .todo-container::-webkit-scrollbar{
@@ -53,7 +58,7 @@
 
 @media (min-width: 38em) {
   .todo-task{
-    width: 350px;
+    width: 370px;
   }
 }
 

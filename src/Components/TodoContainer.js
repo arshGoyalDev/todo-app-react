@@ -2,7 +2,7 @@ import React from 'react';
 import Todo from './Todo';
 
 
-let TodoContainer = props => {
+let TodoContainer = (props) => {
 
   return (
     <div className='todo-container'>

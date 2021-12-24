@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import './components/styles/App.css';
 
 import { ThemeProvider } from 'styled-components';
-import { darkTheme, lightTheme, GlobalStyles } from './Theme';
+import { darkTheme, lightTheme, GlobalStyles } from './theme';
 
 import Header from './components/Header';
 import TodoInput from './components/TodoInput';
 import TodoContainer from './components/TodoContainer';
 import { TaskLeft, ClearCompleted } from './components/TaskLeftClearBtn';
+import Filters from './components/FIlters';
 
 
 function App() {
@@ -55,7 +56,7 @@ function App() {
     let unCompletedTasks = tasks.filter(item => item.taskCompleted == false);
 
     if (completedTasks.length == 0) return;
-    if (window.confirm(`Are you sure you want to delete ${completedTasks.length} tasks? `)) {
+    if (window.confirm(`Are you sure you want to delete ${completedTasks.length} ${completedTasks.length == 1 ? 'task' : 'tasks'}? `)) {
       setTasks(unCompletedTasks);
     }
   }    
@@ -70,11 +71,18 @@ function App() {
         <TodoInput addTask={ addTask } />
         <div className='container'>
           <TodoContainer todoData={ tasks } deleteTodo={ deleteTodo } updateItem={ checkItem } />
-          <div className='task-left--clear-btn for mobile'>
+          <div className='items-filters-clear-container'>
             <TaskLeft items={ tasks } />
+            <div className='for-desktop'>
+              <Filters />
+            </div>
             <ClearCompleted clearCompletedTasks={ clearCompletedTasks } />
           </div>
         </div>
+        <div className='for-mobile'>
+          <Filters />
+        </div>
+        <p className='drag&drop-line'>Drag and drop to reorder list</p>
       </div>
 
     </ThemeProvider>

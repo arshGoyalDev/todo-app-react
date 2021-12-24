@@ -50,3 +50,21 @@ code {
 *:focus{
   outline: 2px solid #fffbfb;
 }
+
+
+/* ---------------- */
+/* utility classes  */
+/* ---------------- */
+
+
+@media (min-width: 38em) {
+  .for-mobile{
+    display: none;
+  }
+}
+
+@media (max-width: 38em) {
+  .for-desktop{
+    display: none;
+  }  
+}
