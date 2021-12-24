@@ -15,7 +15,7 @@
 
 @media (min-width: 38em) {
   .App{
-    background-size: 100% 300px;
+    background-size: 100% 290px;
     background-image: url(../../assets/images/bg-desktop-dark.jpg);
   }
   [data-theme="light"] .App{

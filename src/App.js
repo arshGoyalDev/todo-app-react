@@ -13,14 +13,15 @@ function App() {
 
   let savedTheme = localStorage.getItem('theme');
   const [theme, setTheme] = useState(savedTheme);
-  const todoItems = []
-  const [tasks, setTasks] = useState(todoItems);
-  
+  let savedTodo = localStorage.getItem('tasks') != null ? JSON.parse(localStorage.getItem('tasks')) : [];
+  const [tasks, setTasks] = useState(savedTodo);
+
   useEffect(() => {
-    localStorage.setItem('theme', theme);
     document.body.setAttribute('data-theme', theme);
-  }, [theme])
-  
+    localStorage.setItem('theme', theme);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [theme, tasks])
+
   const themeToggler = () => {
     theme === 'dark' ? setTheme('light') : setTheme('dark');
   }
@@ -29,7 +30,7 @@ function App() {
     let data = [...tasks, taskData]
     setTasks(data);
   } 
-  
+
   const deleteTodo = taskId => { setTasks([...tasks].filter(todo => todo.id !== taskId)) };
 
 

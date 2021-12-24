@@ -1,7 +1,14 @@
 .todo-container{
-  width: 90%;
+  width: 90%; max-height: 333px;
+  overflow: auto;
   margin-top: 20px;
+  border-radius: 5px 5px 0 0;
   box-shadow: 5px 5px 60px rgba(0, 0, 0, 0.4);
+  scrollbar-width: none;
+}
+
+.todo-container::-webkit-scrollbar{
+  width: 0;
 }
 
 @media (min-width: 38em) {
@@ -14,14 +21,6 @@
   display: flex;
   align-items: center;
   padding: 20px 20px;
-}
-
-.todo:first-child{
-  border-radius: 5px 5px 0 0;
-}
-
-.todo:last-child{
-  border-radius: 0 0 5px 5px;
 }
 
 .todo-checkbox{
