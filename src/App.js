@@ -20,6 +20,7 @@ function App() {
   // use state
   const [theme, setTheme] = useState(savedTheme);
   const [tasks, setTasks] = useState(savedTasks);
+  const [filter, setFilter] = useState('all');
 
   // use effect
   useEffect(() => {
@@ -35,7 +36,7 @@ function App() {
 
   // add todo
   const addTask = taskData => {
-    let data = [...tasks, taskData]
+    let data = [taskData, ...tasks]
     setTasks(data);
   }
   
@@ -59,7 +60,12 @@ function App() {
     if (window.confirm(`Are you sure you want to delete ${completedTasks.length} ${completedTasks.length == 1 ? 'task' : 'tasks'}? `)) {
       setTasks(unCompletedTasks);
     }
-  }    
+  }
+
+  // filter tasks
+  let filterTasks = (filter) => {
+    setFilter(filter);
+  };
 
 
   return (
@@ -70,17 +76,17 @@ function App() {
         <Header themeToggler={ themeToggler } theme={ theme } />
         <TodoInput addTask={ addTask } />
         <div className='container'>
-          <TodoContainer todoData={ tasks } deleteTodo={ deleteTodo } updateItem={ checkItem } />
+          <TodoContainer todoData={ tasks } deleteTodo={ deleteTodo } updateItem={ checkItem } filter={ filter } />
           <div className='items-filters-clear-container'>
             <TaskLeft items={ tasks } />
             <div className='for-desktop'>
-              <Filters />
+              <Filters filterTasks={ filterTasks } />
             </div>
             <ClearCompleted clearCompletedTasks={ clearCompletedTasks } />
           </div>
         </div>
         <div className='for-mobile'>
-          <Filters />
+          <Filters filterTasks={ filterTasks } />
         </div>
         <p className='drag-drop-line'>Drag and drop to reorder list</p>
       </div>

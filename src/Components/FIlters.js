@@ -1,13 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/Filters.css';
 
 
-let Filters = () => {
+let Filters = (props) => {
+
+  let [filter, setFilter] = useState('all');
+
+  let clickHandler = (e) => {
+    setFilter(e.target.value);
+    props.filterTasks(e.target.value);
+  }
+  
   return (
     <div className="filters">
-      <button className='active-filter filter-btn--all'>All</button>
-      <button className='filter-btn--active'>Active</button>
-      <button className='filter-btn--completed'>Completed</button>
+      <button
+        value="all" 
+        className={`filter-btn--all ${filter == 'all' ? 'active-filter' : ''}`} 
+        onClick={ clickHandler }
+      >
+        All
+      </button>
+      <button 
+        value="active" 
+        className={`filter-btn--active ${filter == 'active' ? 'active-filter' : ''}`} 
+        onClick={ clickHandler }
+      >
+        Active
+      </button>
+      <button 
+        value="completed" 
+        className={`filter-btn--completed ${filter == 'completed' ? 'active-filter' : ''}`} 
+        onClick={ clickHandler }
+      > 
+        Completed
+      </button>
     </div>
   );
 }
