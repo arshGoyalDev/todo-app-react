@@ -16,8 +16,8 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution](https://your-solution-url.com)
+- [Live site](https://www.frontendmentor.io/solutions/todo-app-react-eZxMRC16n)
 
 ### Built with
 
