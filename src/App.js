@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import './components/styles/App.css';
+import './Components/styles/App.css';
 
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme, GlobalStyles } from './theme';
 
-import Header from './components/Header';
-import TodoInput from './components/TodoInput';
-import TodoContainer from './components/TodoContainer';
-import { TaskLeft, ClearCompleted } from './components/TaskLeftClearBtn';
-import Filters from './components/FIlters';
+import Header from './Components/Header';
+import TodoInput from './Components/TodoInput';
+import TodoContainer from './Components/TodoContainer';
+import { TaskLeft, ClearCompleted } from './Components/TaskLeftClearBtn';
+import Filters from './Components/FIlters';
 
 
 function App() {
