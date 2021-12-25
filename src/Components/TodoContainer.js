@@ -3,9 +3,9 @@ import Todo from "./Todo";
 
 let TodoContainer = (props) => {
   const activeTasksList = props.todoData.map((data) => {
+    let task;
     if (data.taskCompleted === false) {
-      return (
-        <Todo
+        task = <Todo
           tasks={props.todoData}
           key={data.id}
           id={data.id}
@@ -13,25 +13,26 @@ let TodoContainer = (props) => {
           taskCompleted={data.taskCompleted}
           deleteTodo={props.deleteTodo}
           updateItem={props.updateItem}
-        />
-      );
+        />;
     }
+
+    return task;
   });
 
   const completedTasksList = props.todoData.map((data) => {
+    let task;
     if (data.taskCompleted === true) {
-      return (
-        <Todo
-          tasks={props.todoData}
-          key={data.id}
-          id={data.id}
-          todoData={data.task}
-          taskCompleted={data.taskCompleted}
-          deleteTodo={props.deleteTodo}
-          updateItem={props.updateItem}
-        />
-      );
+      task = <Todo
+        tasks={props.todoData}
+        key={data.id}
+        id={data.id}
+        todoData={data.task}
+        taskCompleted={data.taskCompleted}
+        deleteTodo={props.deleteTodo}
+        updateItem={props.updateItem}
+      />
     }
+    return task
   });
 
   const allTasksList = props.todoData.map((data) => {
