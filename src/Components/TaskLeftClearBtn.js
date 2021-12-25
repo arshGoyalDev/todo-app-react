@@ -6,7 +6,7 @@ export let TaskLeft = (props) => {
   let itemsLeft = () => {
     let completedItems = [];
     let totalItems = props.items.length;
-    completedItems = props.items.filter((item) => item.taskCompleted == true);
+    completedItems = props.items.filter((item) => item.taskCompleted === true);
     return totalItems - completedItems.length;
   };
 

@@ -43,7 +43,7 @@ function App() {
   // mark task completed
   const checkItem = (id) => {
     const updatedTasks = [...tasks];
-    const task = updatedTasks.find(data => data.id == id);
+    const task = updatedTasks.find(data => data.id === id);
     task.taskCompleted = task ? !task.taskCompleted : task.taskCompleted;
     setTasks(updatedTasks);
   }
@@ -53,11 +53,11 @@ function App() {
 
   // delete completed todo
   const clearCompletedTasks = () => {
-    let completedTasks = tasks.filter(item => item.taskCompleted == true);
-    let unCompletedTasks = tasks.filter(item => item.taskCompleted == false);
+    let completedTasks = tasks.filter(item => item.taskCompleted === true);
+    let unCompletedTasks = tasks.filter(item => item.taskCompleted === false);
 
-    if (completedTasks.length == 0) return;
-    if (window.confirm(`Are you sure you want to delete ${completedTasks.length} ${completedTasks.length == 1 ? 'task' : 'tasks'}? `)) {
+    if (completedTasks.length === 0) return;
+    if (window.confirm(`Are you sure you want to delete ${completedTasks.length} ${completedTasks.length === 1 ? 'task' : 'tasks'}? `)) {
       setTasks(unCompletedTasks);
     }
   }

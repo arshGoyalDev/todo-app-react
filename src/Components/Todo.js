@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Styles/Todo.css";
 import { ReactComponent as CrossIcon } from "../assets/images/icon-cross.svg";
 

@@ -13,7 +13,7 @@ let Filters = (props) => {
     <div className="filters">
       <button
         value="all"
-        className={`filter-btn--all ${filter == "all" ? "active-filter" : ""}`}
+        className={`filter-btn--all ${filter === "all" ? "active-filter" : ""}`}
         onClick={clickHandler}
       >
         All
@@ -21,7 +21,7 @@ let Filters = (props) => {
       <button
         value="active"
         className={`filter-btn--active ${
-          filter == "active" ? "active-filter" : ""
+          filter === "active" ? "active-filter" : ""
         }`}
         onClick={clickHandler}
       >
@@ -30,7 +30,7 @@ let Filters = (props) => {
       <button
         value="completed"
         className={`filter-btn--completed ${
-          filter == "completed" ? "active-filter" : ""
+          filter === "completed" ? "active-filter" : ""
         }`}
         onClick={clickHandler}
       >

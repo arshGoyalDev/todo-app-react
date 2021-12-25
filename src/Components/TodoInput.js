@@ -22,7 +22,7 @@ let TodoInput = (props) => {
 
   // add todo
   let addTodo = () => {
-    if (task == "") return;
+    if (task === "") return;
     let taskData = {
       id: Math.floor(Math.random() * 1000) + 1,
       task: task,
@@ -35,7 +35,7 @@ let TodoInput = (props) => {
 
   // on clicking enter key
   let keyDownHandler = (e) => {
-    if (e.keyCode == 13) addTodo();
+    if (e.keyCode === 13) addTodo();
   };
 
   // add btn

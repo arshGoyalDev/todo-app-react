@@ -3,7 +3,7 @@ import Todo from "./Todo";
 
 let TodoContainer = (props) => {
   const activeTasksList = props.todoData.map((data) => {
-    if (data.taskCompleted == false) {
+    if (data.taskCompleted === false) {
       return (
         <Todo
           tasks={props.todoData}
@@ -19,7 +19,7 @@ let TodoContainer = (props) => {
   });
 
   const completedTasksList = props.todoData.map((data) => {
-    if (data.taskCompleted == true) {
+    if (data.taskCompleted === true) {
       return (
         <Todo
           tasks={props.todoData}
@@ -49,8 +49,8 @@ let TodoContainer = (props) => {
   });
 
   const tasksList = () => {
-    if (props.filter == "active") return activeTasksList;
-    else if (props.filter == "completed") return completedTasksList;
+    if (props.filter === "active") return activeTasksList;
+    else if (props.filter === "completed") return completedTasksList;
     else return allTasksList;
   };
 
