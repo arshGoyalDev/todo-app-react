@@ -4,7 +4,7 @@ import './Components/styles/App.css';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme, GlobalStyles } from './theme';
 
-import Header from './Components/Header';
+import Header from './Components/Header'; 
 import TodoInput from './Components/TodoInput';
 import TodoContainer from './Components/TodoContainer';
 import { TaskLeft, ClearCompleted } from './Components/TaskLeftClearBtn';
