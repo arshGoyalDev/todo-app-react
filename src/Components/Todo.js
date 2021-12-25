@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./styles/Todo.css";
+import "./Styles/Todo.css";
 import { ReactComponent as CrossIcon } from "../assets/images/icon-cross.svg";
 
 let Todo = (props) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/Header.css";
+import "./Styles/Header.css";
 
 import { ReactComponent as SunIcon } from "../assets/images/icon-sun.svg";
 import { ReactComponent as MoonIcon } from "../assets/images/icon-moon.svg";

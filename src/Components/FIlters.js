@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./styles/Filters.css";
+import "./Styles/Filters.css";
 
 let Filters = (props) => {
   let [filter, setFilter] = useState("all");

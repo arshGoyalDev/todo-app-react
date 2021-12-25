@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/TaskLeftClearBtn.css";
+import "./Styles/TaskLeftClearBtn.css";
 
 export let TaskLeft = (props) => {
   // no. of items left
