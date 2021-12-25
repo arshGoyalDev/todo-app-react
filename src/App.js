@@ -14,7 +14,7 @@ import Filters from './Components/FIlters';
 function App() {
 
   // get todo and theme from local storage
-  let savedTheme = localStorage.getItem('theme');
+  let savedTheme = localStorage.getItem('theme') != null ? localStorage.getItem('theme') : 'dark';
   let savedTasks = localStorage.getItem('tasks') != null ? JSON.parse(localStorage.getItem('tasks')) : [];
 
   // use state

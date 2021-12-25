@@ -2,7 +2,7 @@ import React from "react";
 import Todo from "./Todo";
 
 let TodoContainer = (props) => {
-  const activeTasksList = props.todoData.forEach((data) => {
+  const activeTasksList = props.todoData.map((data) => {
     if (data.taskCompleted === false) {
       return (
         <Todo
@@ -18,7 +18,7 @@ let TodoContainer = (props) => {
     }
   });
 
-  const completedTasksList = props.todoData.forEach((data) => {
+  const completedTasksList = props.todoData.map((data) => {
     if (data.taskCompleted === true) {
       return (
         <Todo
@@ -34,7 +34,7 @@ let TodoContainer = (props) => {
     }
   });
 
-  const allTasksList = props.todoData.forEach((data) => {
+  const allTasksList = props.todoData.map((data) => {
     return (
       <Todo
         tasks={props.todoData}
