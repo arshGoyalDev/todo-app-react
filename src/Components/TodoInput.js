@@ -43,7 +43,7 @@ let TodoInput = (props) => {
 
   return (
     <div className="todo-input">
-      <button className="add-btn" onClick={clickHandler}></button>
+      <button className="add-btn" onClick={clickHandler}>Add</button>
       <input
         type="text"
         placeholder="Create a new todo"
