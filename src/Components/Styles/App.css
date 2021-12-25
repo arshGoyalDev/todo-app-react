@@ -1,4 +1,4 @@
-.App{
+.App {
   min-height: 100vh;
   background-image: url(../../assets/images/bg-mobile-dark.jpg);
   background-size: 100% 230px;
@@ -8,22 +8,21 @@
   flex-direction: column;
 }
 
-[data-theme="light"] .App{
+[data-theme="light"] .App {
   background-image: url(../../assets/images/bg-mobile-light.jpg);
 }
 
-
 @media (min-width: 38em) {
-  .App{
+  .App {
     background-size: 100% 280px;
     background-image: url(../../assets/images/bg-desktop-dark.jpg);
   }
-  [data-theme="light"] .App{
+  [data-theme="light"] .App {
     background-image: url(../../assets/images/bg-desktop-light.jpg);
   }
 }
 
-.container{
+.container {
   width: 90%;
   margin-top: 20px;
   border-radius: 5px;
@@ -31,7 +30,7 @@
   box-shadow: 5px 5px 60px rgba(0, 0, 0, 0.4);
 }
 
-.items-filters-clear-container{
+.items-filters-clear-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,12 +38,12 @@
 }
 
 @media (min-width: 38em) {
-  .container{
+  .container {
     width: 550px;
   }
 }
 
-.drag-drop-line{
+.drag-drop-line {
   position: absolute;
   bottom: 25px;
   font-weight: 500;

@@ -1,26 +1,26 @@
-.todo-container{
+.todo-container {
   max-height: 240px;
   overflow: auto;
   scrollbar-width: thin;
 }
 
 @media (min-width: 38em) {
-  .todo-container{
+  .todo-container {
     max-height: 300px;
   }
 }
 
-.todo-container::-webkit-scrollbar{
+.todo-container::-webkit-scrollbar {
   width: 5px;
 }
 
-.todo{
+.todo {
   display: flex;
   align-items: center;
   padding: 16.5px 20px;
 }
 
-.todo-checkbox{
+.todo-checkbox {
   position: relative;
   width: 25px;
   height: 25px;
@@ -31,11 +31,13 @@
   cursor: default;
 }
 
-.todo-checkbox.completed::before{
-  content: '';
+.todo-checkbox.completed::before {
+  content: "";
   position: absolute;
-  top: 0; left: 0.5px;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0.5px;
+  width: 100%;
+  height: 100%;
   background-image: url(../../assets/images/icon-check.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -43,12 +45,12 @@
   transition: 0.3s;
 }
 
-.todo-checkbox.completed{
-  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));  
+.todo-checkbox.completed {
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   border: 0;
 }
 
-.todo-task{
+.todo-task {
   width: 200px;
   margin-bottom: -5px;
   white-space: nowrap;
@@ -57,16 +59,16 @@
 }
 
 @media (min-width: 38em) {
-  .todo-task{
+  .todo-task {
     width: 370px;
   }
 }
 
-.todo-checkbox.completed ~ .todo-task{
+.todo-checkbox.completed ~ .todo-task {
   text-decoration: line-through;
 }
 
-.remove-task-btn{
+.remove-task-btn {
   background: none;
   border: none;
   margin: 0 0 -4px auto;
@@ -74,14 +76,14 @@
 }
 
 @media (min-width: 78em) {
-  .remove-task-btn{
+  .remove-task-btn {
     opacity: 0;
     transition: 0.3s;
     cursor: pointer;
   }
 
   .todo:hover .remove-task-btn,
-  .remove-task-btn:focus{
+  .remove-task-btn:focus {
     opacity: 1;
   }
 }

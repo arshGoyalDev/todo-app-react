@@ -1,5 +1,4 @@
-
-.header{
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,20 +7,20 @@
 }
 
 @media (min-width: 38em) {
-  .header{
+  .header {
     margin: 70px 0 40px;
     width: 550px;
-  } 
+  }
 }
 
-.title{
+.title {
   text-transform: uppercase;
   color: #fff;
   font-size: 2rem;
   letter-spacing: 10px;
 }
 
-.theme-btn{
+.theme-btn {
   padding: 7px 7px 5px;
   margin-right: -7px;
   background: none;

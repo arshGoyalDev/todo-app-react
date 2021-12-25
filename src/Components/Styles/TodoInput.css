@@ -1,20 +1,19 @@
-
-.todo-input{
+.todo-input {
   display: flex;
   align-items: center;
   width: 90%;
-  border-radius: 5px; 
+  border-radius: 5px;
   padding-left: 17px;
   box-shadow: 10px 10px 80px rgba(0, 0, 0, 0.4);
 }
 
 @media (min-width: 38em) {
-  .todo-input{
+  .todo-input {
     width: 550px;
-  } 
+  }
 }
 
-.add-btn{
+.add-btn {
   width: 25px;
   height: 24px;
   background: transparent;
@@ -22,7 +21,7 @@
   cursor: pointer;
 }
 
-.todo-input input{
+.todo-input input {
   width: 100%;
   padding: 23.5px 20px 20.5px;
   background: transparent;
@@ -30,6 +29,6 @@
   outline: none;
 }
 
-.todo-input input::placeholder{
+.todo-input input::placeholder {
   opacity: 1;
 }

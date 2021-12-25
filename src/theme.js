@@ -1,35 +1,34 @@
-import { createGlobalStyle } from "styled-components"
-
+import { createGlobalStyle } from "styled-components";
 
 export const darkTheme = {
-  text: 'hsl(234, 39%, 85%)',
-  bodyBackground: 'hsl(235, 21%, 11%)',
-  todoBackground: 'hsl(235, 24%, 19%)',
-  todoBorder: 'hsl(237, 14%, 26%)',
-  checkboxBorder: 'hsl(234, 11%, 52%)',
-  placeholderAndCompletedTask: 'hsl(234, 11%, 52%)',
-  clearCompletedBtnHover: 'hsl(234, 39%, 85%)',
-  filtersBtnHover: 'hsl(236, 33%, 92%)',
-  
+  text: "hsl(234, 39%, 85%)",
+  bodyBackground: "hsl(235, 21%, 11%)",
+  todoBackground: "hsl(235, 24%, 19%)",
+  todoBorder: "hsl(237, 14%, 26%)",
+  checkboxBorder: "hsl(234, 11%, 52%)",
+  placeholderAndCompletedTask: "hsl(234, 11%, 52%)",
+  clearCompletedBtnHover: "hsl(234, 39%, 85%)",
+  filtersBtnHover: "hsl(236, 33%, 92%)",
+
   // hsl(234, 11%, 52%),
   // hsl(236, 33%, 92%),
   // hsl(233, 14%, 35%)'
-}
+};
 
 export const lightTheme = {
-  text: 'hsl(235, 21%, 11%)',
-  bodyBackground: 'hsl(236, 33%, 92%)',
-  todoBackground: 'hsl(0, 0%, 98%)',
-  todoBorder: 'hsl(233, 11%, 84%)',
-  checkboxBorder: 'hsl(236, 9%, 61%)',
-  placeholderAndCompletedTask: 'hsl(236, 9%, 61%)',
-  clearCompletedBtnHover: 'hsl(235, 19%, 35%)',
-  filtersBtnHover: 'hsl(235, 21%, 11%)',
-  
+  text: "hsl(235, 21%, 11%)",
+  bodyBackground: "hsl(236, 33%, 92%)",
+  todoBackground: "hsl(0, 0%, 98%)",
+  todoBorder: "hsl(233, 11%, 84%)",
+  checkboxBorder: "hsl(236, 9%, 61%)",
+  placeholderAndCompletedTask: "hsl(236, 9%, 61%)",
+  clearCompletedBtnHover: "hsl(235, 19%, 35%)",
+  filtersBtnHover: "hsl(235, 21%, 11%)",
+
   // 'hsl(236, 9%, 61%)',
   // 'hsl(233, 11%, 84%)',
   // 'hsl(235, 19%, 35%)',
-}
+};
 
 export const GlobalStyles = createGlobalStyle`
 

@@ -1,53 +1,58 @@
-import React, { useState, useEffect } from 'react';
-import './styles/TodoInput.css';
-
+import React, { useState, useEffect } from "react";
+import "./styles/TodoInput.css";
 
 let TodoInput = (props) => {
-  
   // localStorage
-  let savedValue = localStorage.getItem('taskInputValue') != null ? localStorage.getItem('taskInputValue') : '';
+  let savedValue =
+    localStorage.getItem("taskInputValue") != null
+      ? localStorage.getItem("taskInputValue")
+      : "";
 
   // useState
   let [task, setTask] = useState(savedValue);
 
   useEffect(() => {
-    localStorage.setItem('taskInputValue', task);
-  }, [task])
+    localStorage.setItem("taskInputValue", task);
+  }, [task]);
 
   // changing the value of TaskInput
-  let changeHandler = e => {
+  let changeHandler = (e) => {
     setTask(e.target.value);
-  }
+  };
 
   // add todo
   let addTodo = () => {
-    if (task == '') return;
-    let taskData = { 
+    if (task == "") return;
+    let taskData = {
       id: Math.floor(Math.random() * 1000) + 1,
-      task: task, 
+      task: task,
       taskCompleted: false,
-    }
-  
+    };
+
     props.addTask(taskData);
-    setTask('');
-  }
+    setTask("");
+  };
 
   // on clicking enter key
-  let keyDownHandler = e => {
+  let keyDownHandler = (e) => {
     if (e.keyCode == 13) addTodo();
-  }
+  };
 
   // add btn
   let clickHandler = () => addTodo();
 
-
-  return(
-    <div className='todo-input'>
-      <button className='add-btn' onClick={ clickHandler }></button>
-      <input type="text" placeholder='Create a new todo' value={ task } onChange={ changeHandler } onKeyDown={ keyDownHandler } />
+  return (
+    <div className="todo-input">
+      <button className="add-btn" onClick={clickHandler}></button>
+      <input
+        type="text"
+        placeholder="Create a new todo"
+        value={task}
+        onChange={changeHandler}
+        onKeyDown={keyDownHandler}
+      />
     </div>
-  ); 
+  );
 };
-
 
 export default TodoInput;
