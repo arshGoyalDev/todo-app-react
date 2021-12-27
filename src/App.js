@@ -72,7 +72,7 @@ function App() {
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
 
       <GlobalStyles />
-      <div className="App">
+      <main className="App">
         <Header themeToggler={ themeToggler } theme={ theme } />
         <TodoInput addTask={ addTask } />
         <div className='container'>
@@ -89,7 +89,7 @@ function App() {
           <Filters filterTasks={ filterTasks } />
         </div>
         <p className='drag-drop-line'>Drag and drop to reorder list</p>
-      </div>
+      </main>
 
     </ThemeProvider>
   );
