@@ -38,7 +38,8 @@ export const GlobalStyles = createGlobalStyle`
 
   .todo-input,
   .items-filters-clear-container,
-  .for-mobile .filters{
+  .for-mobile .filters,
+  .todo-container::-webkit-scrollbar-track{
     background: ${(props) => props.theme.todoBackground};
   }
   
@@ -74,6 +75,10 @@ export const GlobalStyles = createGlobalStyle`
   .filters button:focus,
   .filters button:hover{
     color: ${(props) => props.theme.filtersBtnHover};
+  }
+
+  .todo-container{
+    scrollbar-color: hsl(233, 13%, 49%) ${(props) => props.theme.todoBackground};
   }
 
 `;

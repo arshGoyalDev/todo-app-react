@@ -14,6 +14,22 @@
   width: 5px;
 }
 
+.todo-container::-webkit-scrollbar-track{
+  border-radius: 0 5px 0 0;
+}
+
+.todo-container::-webkit-scrollbar-thumb{
+  background: hsl(233, 13%, 49%);
+  border-radius: 5px;
+}
+
+@supports (scrollbar-width: thin) {
+  .todo-container{
+    scrollbar-color: hsl(233, 13%, 49%) hsl(237, 14%, 26%);
+    scrollbar-width: thin;
+  }
+}
+
 .todo {
   display: flex;
   align-items: center;
