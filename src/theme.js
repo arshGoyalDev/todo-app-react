@@ -78,7 +78,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .todo-container{
-    scrollbar-color: hsl(233, 13%, 49%) ${(props) => props.theme.todoBackground};
+    scrollbar-color: hsl(233, 13%, 49%) ${(props) =>
+      props.theme.todoBackground};
   }
 
 `;
