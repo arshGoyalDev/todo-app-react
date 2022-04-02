@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+
 import "./Components/Styles/App.css";
 
 import { ThemeProvider } from "styled-components";
+
 import { darkTheme, lightTheme, GlobalStyles } from "./theme";
 
 import Header from "./Components/Header";
 import TodoInput from "./Components/TodoInput";
 import TodoContainer from "./Components/TodoContainer";
-import { TaskLeft, ClearCompleted } from "./Components/TaskLeftClearBtn";
 import Filters from "./Components/FIlters";
+import { TaskLeft, ClearCompleted } from "./Components/TaskLeftClearBtn";
 
-function App() {
+const App = () => {
   // get todo and theme from local storage
-  let savedTheme =
+  const savedTheme =
     localStorage.getItem("theme") != null
       ? localStorage.getItem("theme")
       : "dark";
-  let savedTasks =
+  const savedTasks =
     localStorage.getItem("tasks") != null
       ? JSON.parse(localStorage.getItem("tasks"))
       : [];
@@ -75,7 +77,7 @@ function App() {
   };
 
   // filter tasks
-  let filterTasks = (filter) => {
+  const filterTasks = (filter) => {
     setFilter(filter);
   };
 

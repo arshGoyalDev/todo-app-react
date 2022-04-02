@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
+
 import "./Styles/Filters.css";
 
-let Filters = (props) => {
-  let [filter, setFilter] = useState("all");
+const Filters = (props) => {
+  const [filter, setFilter] = useState("all");
 
-  let clickHandler = (e) => {
+  const clickHandler = (e) => {
     setFilter(e.target.value);
     props.filterTasks(e.target.value);
   };

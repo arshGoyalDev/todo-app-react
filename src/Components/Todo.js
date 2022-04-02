@@ -1,15 +1,15 @@
-import React from "react";
 import "./Styles/Todo.css";
+
 import { ReactComponent as CrossIcon } from "../assets/images/icon-cross.svg";
 
-let Todo = (props) => {
+const Todo = (props) => {
   // delete todo
-  let clickHandler = () => {
+  const clickHandler = () => {
     props.deleteTodo(props.id);
   };
 
   // mark task completed
-  let taskComplete = () => {
+  const taskComplete = () => {
     props.updateItem(props.id);
   };
 

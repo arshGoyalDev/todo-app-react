@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
+
 import "./Styles/Header.css";
 
 import { ReactComponent as SunIcon } from "../assets/images/icon-sun.svg";
 import { ReactComponent as MoonIcon } from "../assets/images/icon-moon.svg";
 
-let Header = (props) => {
+const Header = (props) => {
   
   const [rotate, setRotate] = useState(false);
   
   // theme toggle
-  let clickHandler = () => {
+  const clickHandler = () => {
     props.themeToggler();
     setRotate(true);
     setTimeout(() => {

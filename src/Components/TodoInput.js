@@ -1,29 +1,30 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+
 import "./Styles/TodoInput.css";
 
-let TodoInput = (props) => {
+const TodoInput = (props) => {
   // localStorage
-  let savedValue =
+  const savedValue =
     localStorage.getItem("taskInputValue") != null
       ? localStorage.getItem("taskInputValue")
       : "";
 
   // useState
-  let [task, setTask] = useState(savedValue);
+  const [task, setTask] = useState(savedValue);
 
   useEffect(() => {
     localStorage.setItem("taskInputValue", task);
   }, [task]);
 
   // changing the value of TaskInput
-  let changeHandler = (e) => {
+  const changeHandler = (e) => {
     setTask(e.target.value);
   };
 
   // add todo
-  let addTodo = () => {
+  const addTodo = () => {
     if (task === "") return;
-    let taskData = {
+    const taskData = {
       id: Math.floor(Math.random() * 1000) + 1,
       task: task,
       taskCompleted: false,
@@ -34,12 +35,12 @@ let TodoInput = (props) => {
   };
 
   // on clicking enter key
-  let keyDownHandler = (e) => {
+  const keyDownHandler = (e) => {
     if (e.keyCode === 13) addTodo();
   };
 
   // add btn
-  let clickHandler = () => addTodo();
+  const clickHandler = () => addTodo();
 
   return (
     <div className="todo-input">

@@ -1,7 +1,6 @@
-import React from "react";
 import Todo from "./Todo";
 
-let TodoContainer = (props) => {
+const TodoContainer = (props) => {
   const activeTasksList = props.todoData.map((data) => {
     let task;
     if (data.taskCompleted === false) {
