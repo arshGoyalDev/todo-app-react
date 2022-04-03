@@ -16,13 +16,14 @@ const Todo = ({ todoData, tasks, setTasks }) => {
     <div
       className={`todo ${todoData.taskCompleted === true ? "completed" : ""}`}
     >
-      <button
-        className={`todo-checkbox ${
-          todoData.taskCompleted === true ? "completed" : ""
-        }`}
-        onClick={taskComplete}
-      ></button>
-      <p className="todo-task">{todoData.task}</p>
+      <div className="todo-body" onClick={taskComplete}>
+        <button
+          className={`todo-checkbox ${
+            todoData.taskCompleted === true ? "completed" : ""
+          }`}
+        ></button>
+        <p className="todo-task">{todoData.task}</p>
+      </div>
       <button className="remove-task-btn" onClick={deleteTask}>
         <CrossIcon />
       </button>

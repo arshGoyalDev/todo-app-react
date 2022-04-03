@@ -36,6 +36,11 @@
   padding: 16.5px 20px;
 }
 
+.todo-body {
+  display: flex;
+  align-items: center;
+}
+
 .todo-checkbox {
   position: relative;
   width: 25px;
@@ -47,7 +52,7 @@
   cursor: pointer;
 }
 
-.todo-checkbox:hover{
+.todo-checkbox:hover {
   border-color: hsl(280, 87%, 65%);
 }
 
@@ -93,6 +98,7 @@
   border: none;
   margin: 0 0 -4px auto;
   outline: none;
+  cursor: pointer;
 }
 
 @media (min-width: 78em) {

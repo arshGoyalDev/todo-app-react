@@ -1,14 +1,17 @@
 .todo-input {
   display: flex;
   align-items: center;
-  width: 90%;
   border-radius: 5px;
   padding-left: 17px;
   box-shadow: 10px 10px 80px rgba(0, 0, 0, 0.4);
 }
 
+.todo-input-wrapper {
+  width: 90%;
+}
+
 @media (min-width: 38em) {
-  .todo-input {
+  .todo-input-wrapper {
     width: 550px;
   }
 }
