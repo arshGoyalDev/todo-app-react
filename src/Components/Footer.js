@@ -1,5 +1,5 @@
 import TaskLeft from "./TaskLeft";
-import Filters from "./Filters";
+import Filters from "./Filterss";
 import ClearBtn from "./ClearBtn";
 
 const Footer = ({ tasks, setTasks, setFilter }) => {

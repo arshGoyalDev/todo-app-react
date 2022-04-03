@@ -9,7 +9,7 @@ import { darkTheme, lightTheme, GlobalStyles } from "./theme";
 import Header from "./Components/Header";
 import TodoInput from "./Components/TodoInput";
 import TodoContainer from "./Components/TodoContainer";
-import Filters from "./Components/Filters";
+import Filters from "./Components/Filterss";
 import Footer from "./Components/Footer";
 
 const App = () => {
