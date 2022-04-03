@@ -30,6 +30,6 @@
   transition: 1s;
 }
 
-.theme-btn.rotate{
+.theme-btn.rotate {
   transform: rotate(360deg);
 }

@@ -16,4 +16,4 @@ const deleteTodo = (taskId, tasks, setTasks) => {
   setTasks([...tasks].filter((todo) => todo.id !== taskId));
 };
 
-export {addTask, checkTask, deleteTodo}
+export { addTask, checkTask, deleteTodo };

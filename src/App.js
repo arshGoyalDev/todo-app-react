@@ -48,8 +48,6 @@ const App = () => {
           <TodoContainer
             todoData={tasks}
             setTasks={setTasks}
-            // deleteTodo={deleteTodo}
-            // updateItem={checkItem}
             filter={filter}
           />
           <Footer tasks={tasks} setTasks={setTasks} setFilter={setFilter} />

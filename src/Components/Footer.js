@@ -2,8 +2,7 @@ import TaskLeft from "./TaskLeft";
 import Filters from "./Filters";
 import ClearBtn from "./ClearBtn";
 
-
-const Footer = ({tasks, setTasks, setFilter}) => {
+const Footer = ({ tasks, setTasks, setFilter }) => {
   return (
     <div className="items-filters-clear-container">
       <TaskLeft items={tasks} />

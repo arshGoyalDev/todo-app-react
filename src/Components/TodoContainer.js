@@ -1,6 +1,6 @@
 import Todo from "./Todo";
 
-const TodoContainer = ({todoData, setTasks, filter,}) => {
+const TodoContainer = ({ todoData, setTasks, filter }) => {
   const activeTasksList = todoData.map((data) => {
     let task;
     if (data.taskCompleted === false) {
@@ -9,12 +9,7 @@ const TodoContainer = ({todoData, setTasks, filter,}) => {
           tasks={todoData}
           todoData={data}
           key={data.id}
-          // id={data.id}
-          // todoData={data.task}
           setTasks={setTasks}
-          // taskCompleted={data.taskCompleted}
-          // deleteTodo={deleteTodo}
-          // updateItem={updateItem}
         />
       );
     }
@@ -30,12 +25,7 @@ const TodoContainer = ({todoData, setTasks, filter,}) => {
           tasks={todoData}
           todoData={data}
           key={data.id}
-          // id={data.id}
-          // todoData={data.task}
           setTasks={setTasks}
-          // taskCompleted={data.taskCompleted}
-          // deleteTodo={deleteTodo}
-          // updateItem={updateItem}
         />
       );
     }
@@ -45,17 +35,12 @@ const TodoContainer = ({todoData, setTasks, filter,}) => {
   const allTasksList = todoData.map((data) => {
     return (
       <Todo
-      tasks={todoData}
-      todoData={data}
-      key={data.id}
-      // id={data.id}
-      // todoData={data.task}
-      setTasks={setTasks}
-      // taskCompleted={data.taskCompleted}
-      // deleteTodo={deleteTodo}
-      // updateItem={updateItem}
-    />
-);
+        tasks={todoData}
+        todoData={data}
+        key={data.id}
+        setTasks={setTasks}
+      />
+    );
   });
 
   const tasksList = () => {
