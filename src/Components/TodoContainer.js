@@ -1,18 +1,20 @@
 import Todo from "./Todo";
 
-const TodoContainer = (props) => {
-  const activeTasksList = props.todoData.map((data) => {
+const TodoContainer = ({todoData, setTasks, filter,}) => {
+  const activeTasksList = todoData.map((data) => {
     let task;
     if (data.taskCompleted === false) {
       task = (
         <Todo
-          tasks={props.todoData}
+          tasks={todoData}
+          todoData={data}
           key={data.id}
-          id={data.id}
-          todoData={data.task}
-          taskCompleted={data.taskCompleted}
-          deleteTodo={props.deleteTodo}
-          updateItem={props.updateItem}
+          // id={data.id}
+          // todoData={data.task}
+          setTasks={setTasks}
+          // taskCompleted={data.taskCompleted}
+          // deleteTodo={deleteTodo}
+          // updateItem={updateItem}
         />
       );
     }
@@ -20,41 +22,45 @@ const TodoContainer = (props) => {
     return task;
   });
 
-  const completedTasksList = props.todoData.map((data) => {
+  const completedTasksList = todoData.map((data) => {
     let task;
     if (data.taskCompleted === true) {
       task = (
         <Todo
-          tasks={props.todoData}
+          tasks={todoData}
+          todoData={data}
           key={data.id}
-          id={data.id}
-          todoData={data.task}
-          taskCompleted={data.taskCompleted}
-          deleteTodo={props.deleteTodo}
-          updateItem={props.updateItem}
+          // id={data.id}
+          // todoData={data.task}
+          setTasks={setTasks}
+          // taskCompleted={data.taskCompleted}
+          // deleteTodo={deleteTodo}
+          // updateItem={updateItem}
         />
       );
     }
     return task;
   });
 
-  const allTasksList = props.todoData.map((data) => {
+  const allTasksList = todoData.map((data) => {
     return (
       <Todo
-        tasks={props.todoData}
-        key={data.id}
-        id={data.id}
-        todoData={data.task}
-        taskCompleted={data.taskCompleted}
-        deleteTodo={props.deleteTodo}
-        updateItem={props.updateItem}
-      />
-    );
+      tasks={todoData}
+      todoData={data}
+      key={data.id}
+      // id={data.id}
+      // todoData={data.task}
+      setTasks={setTasks}
+      // taskCompleted={data.taskCompleted}
+      // deleteTodo={deleteTodo}
+      // updateItem={updateItem}
+    />
+);
   });
 
   const tasksList = () => {
-    if (props.filter === "active") return activeTasksList;
-    else if (props.filter === "completed") return completedTasksList;
+    if (filter === "active") return activeTasksList;
+    else if (filter === "completed") return completedTasksList;
     else return allTasksList;
   };
 

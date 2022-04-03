@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 
+import { addTask } from "../utils/updateTasks";
+
 import "./Styles/TodoInput.css";
 
-const TodoInput = (props) => {
+const TodoInput = ({tasks, setTasks}) => {
   // localStorage
   const savedValue =
     localStorage.getItem("taskInputValue") != null
@@ -30,7 +32,7 @@ const TodoInput = (props) => {
       taskCompleted: false,
     };
 
-    props.addTask(taskData);
+    addTask(taskData, tasks, setTasks);
     setTask("");
   };
 
