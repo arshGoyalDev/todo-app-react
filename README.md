@@ -18,7 +18,7 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 ### Links
 
 - [Solution](https://www.frontendmentor.io/solutions/todo-app-react-eZxMRC16n)
-- [Live site](https://todo-app-react-developingweb.vercel.app/)
+- [Live site](https://todo-app-react-lemon.vercel.app)
 
 ### Built with
 
