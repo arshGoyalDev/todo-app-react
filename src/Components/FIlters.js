@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import { filterTasks } from "../utils/filter";
 
 import "./Styles/Filters.css";
@@ -8,9 +9,7 @@ const Filters = ({ setFilter }) => {
 
   const clickHandler = (e) => {
     updateFilter(e.target.value);
-    // setFilter(e.target.value);
     filterTasks(e.target.value, setFilter);
-    // props.filterTasks(e.target.value);
   };
 
   return (
