@@ -9,8 +9,10 @@ import { darkTheme, lightTheme, GlobalStyles } from "./theme";
 import Header from "./Components/Header";
 import TodoInput from "./Components/TodoInput";
 import TodoContainer from "./Components/TodoContainer";
-import Filters from "./Components/FIlters";
-import { TaskLeft, ClearCompleted } from "./Components/TaskLeftClearBtn";
+import Filters from "./Components/Filters";
+import TaskLeft from "./Components/TaskLeft";
+import ClearCompleted from "./Components/ClearBtn";
+import Footer from "./Components/Footer";
 
 const App = () => {
   // get todo and theme from local storage
@@ -60,26 +62,8 @@ const App = () => {
   };
 
   // delete completed todo
-  const clearCompletedTasks = () => {
-    let completedTasks = tasks.filter((item) => item.taskCompleted === true);
-    let unCompletedTasks = tasks.filter((item) => item.taskCompleted === false);
-
-    if (completedTasks.length === 0) return;
-    if (
-      window.confirm(
-        `Are you sure you want to delete ${completedTasks.length} ${
-          completedTasks.length === 1 ? "task" : "tasks"
-        }? `
-      )
-    ) {
-      setTasks(unCompletedTasks);
-    }
-  };
 
   // filter tasks
-  const filterTasks = (filter) => {
-    setFilter(filter);
-  };
 
   return (
     <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
@@ -94,21 +78,15 @@ const App = () => {
             updateItem={checkItem}
             filter={filter}
           />
-          <div className="items-filters-clear-container">
-            <TaskLeft items={tasks} />
-            <div className="for-desktop">
-              <Filters filterTasks={filterTasks} />
-            </div>
-            <ClearCompleted clearCompletedTasks={clearCompletedTasks} />
-          </div>
+          <Footer tasks={tasks} setTasks={setTasks} setFilter={setFilter} />
         </div>
         <div className="for-mobile">
-          <Filters filterTasks={filterTasks} />
+          <Filters setFilter={setFilter} />
         </div>
-        <p className="drag-drop-line">Drag and drop to reorder list</p>
+        {/* <p className="drag-drop-line">Drag and drop to reorder list</p> */}
       </main>
     </ThemeProvider>
   );
-}
+};
 
 export default App;
