@@ -13,7 +13,6 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 - Clear all completed todos
 - Toggle light and dark mode
 - Theme, Todo saved in the local storage
-<!-- - Drag and drop to reorder items on the list -->
 
 ### Links
 
