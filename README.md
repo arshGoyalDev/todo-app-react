@@ -33,4 +33,4 @@ This is my first ever project with react. I have learnt a lot about react while 
 
 ## Author
 
-- Frontend Mentor - [@developingWeb](https://www.frontendmentor.io/profile/developingWeb)
+- Frontend Mentor - [@arshGoyalDev](https://www.frontendmentor.io/profile/arshGoyalDev)
