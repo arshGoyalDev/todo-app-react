@@ -14,11 +14,6 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 - Toggle light and dark mode
 - Theme, Todo saved in the local storage
 
-### Links
-
-- [Solution](https://www.frontendmentor.io/solutions/todo-app-react-eZxMRC16n)
-- [Live site](https://todo-app-react-lemon.vercel.app)
-
 ### Built with
 
 - CSS custom properties
